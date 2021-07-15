@@ -12,6 +12,8 @@
 		7F44BA1D26A052D5005CF92B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA1B26A052D5005CF92B /* LaunchScreen.storyboard */; };
 		7F44BA2526A055B3005CF92B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA2426A055B3005CF92B /* HomeViewController.swift */; };
 		7F44BA2726A055C0005CF92B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA2626A055C0005CF92B /* Home.storyboard */; };
+		7F44BA2C26A061F4005CF92B /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA2B26A061F4005CF92B /* SearchResultViewController.swift */; };
+		7F44BA2E26A06201005CF92B /* SearchResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA2D26A06201005CF92B /* SearchResult.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		7F44BA1E26A052D5005CF92B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F44BA2426A055B3005CF92B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7F44BA2626A055C0005CF92B /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		7F44BA2B26A061F4005CF92B /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		7F44BA2D26A06201005CF92B /* SearchResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResult.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				7F44BA2426A055B3005CF92B /* HomeViewController.swift */,
+				7F44BA2B26A061F4005CF92B /* SearchResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -76,6 +81,7 @@
 			children = (
 				7F44BA1B26A052D5005CF92B /* LaunchScreen.storyboard */,
 				7F44BA2626A055C0005CF92B /* Home.storyboard */,
+				7F44BA2D26A06201005CF92B /* SearchResult.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -149,6 +155,7 @@
 				7F44BA2726A055C0005CF92B /* Home.storyboard in Resources */,
 				7F44BA1D26A052D5005CF92B /* LaunchScreen.storyboard in Resources */,
 				7F44BA1A26A052D5005CF92B /* Assets.xcassets in Resources */,
+				7F44BA2E26A06201005CF92B /* SearchResult.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F44BA1326A052D5005CF92B /* AppDelegate.swift in Sources */,
+				7F44BA2C26A061F4005CF92B /* SearchResultViewController.swift in Sources */,
 				7F44BA2526A055B3005CF92B /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
