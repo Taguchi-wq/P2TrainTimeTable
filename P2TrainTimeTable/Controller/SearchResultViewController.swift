@@ -10,6 +10,14 @@ import UIKit
 
 class SearchResultViewController: UIViewController {
 
+    // MARK: - @IBOutlet
+    /// 駅をし表示するUILabel
+    @IBOutlet private weak var stationLabel: UILabel!
+    /// 路線を表示するUITableView
+    @IBOutlet private weak var lineTableView: UITableView!
+    
+    
+    // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
     }

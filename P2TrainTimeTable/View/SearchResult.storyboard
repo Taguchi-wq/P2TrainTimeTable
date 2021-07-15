@@ -9,20 +9,70 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Search Result View Controller-->
+        <!--検索結果-->
         <scene sceneID="FkY-07-SA8">
             <objects>
                 <viewController storyboardIdentifier="SearchResultViewController" id="o62-Gl-PsO" customClass="SearchResultViewController" customModule="P2TrainTimeTable" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v7L-hl-i2e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsa-8W-eAp">
+                                <rect key="frame" x="16" y="30" width="343" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="駅：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ca9-Kf-cUP">
+                                        <rect key="frame" x="0.0" y="0.0" width="51" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="51" id="dxa-KF-nDa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大久保" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxn-Ob-My1">
+                                        <rect key="frame" x="51" y="0.0" width="292" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Jj-xE-Vzi">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="F0N-k4-Lbj">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F0N-k4-Lbj" id="0iZ-AH-i3A">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="aLk-4p-Zvf" firstAttribute="trailing" secondItem="xsa-8W-eAp" secondAttribute="trailing" constant="16" id="Eab-i2-Sh2"/>
+                            <constraint firstItem="aLk-4p-Zvf" firstAttribute="bottom" secondItem="5Jj-xE-Vzi" secondAttribute="bottom" id="FHh-Z6-JOU"/>
+                            <constraint firstItem="5Jj-xE-Vzi" firstAttribute="leading" secondItem="aLk-4p-Zvf" secondAttribute="leading" id="FML-lj-1dz"/>
+                            <constraint firstItem="xsa-8W-eAp" firstAttribute="leading" secondItem="aLk-4p-Zvf" secondAttribute="leading" constant="16" id="ban-qO-VoP"/>
+                            <constraint firstItem="5Jj-xE-Vzi" firstAttribute="top" secondItem="xsa-8W-eAp" secondAttribute="bottom" id="nnv-Mf-OJL"/>
+                            <constraint firstItem="aLk-4p-Zvf" firstAttribute="trailing" secondItem="5Jj-xE-Vzi" secondAttribute="trailing" id="qKJ-r2-oT4"/>
+                            <constraint firstItem="xsa-8W-eAp" firstAttribute="top" secondItem="aLk-4p-Zvf" secondAttribute="top" constant="10" id="rNg-qY-r8m"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aLk-4p-Zvf"/>
                     </view>
+                    <navigationItem key="navigationItem" title="検索結果" id="LsO-SK-mf2"/>
+                    <connections>
+                        <outlet property="lineTableView" destination="5Jj-xE-Vzi" id="me6-He-Ked"/>
+                        <outlet property="stationLabel" destination="Sxn-Ob-My1" id="Yel-RQ-H3h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bq9-tj-Lky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-358" y="149"/>
+            <point key="canvasLocation" x="580" y="148.87556221889056"/>
         </scene>
     </scenes>
 </document>
