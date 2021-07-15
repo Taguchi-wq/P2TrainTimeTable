@@ -20,6 +20,27 @@ class HomeViewController: UIViewController {
     // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupSearchBar(searchBar)
+    }
+    
+    
+    // MARK: - Private Methods
+    /// SearchBarの設定をする
+    private func setupSearchBar(_ searchBar: UISearchBar) {
+        searchBar.delegate = self
+    }
+    
+}
+
+
+// MARK: - UISearchBarDelegate
+extension HomeViewController: UISearchBarDelegate {
+    
+    /// キーボードの「検索」ボタンを押した時に呼ばれる
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let searchResultViewController = storyboard?.instantiateViewController(withIdentifier: SearchResultViewController.reuseIdentifier) as! SearchResultViewController
+        navigationController?.pushViewController(searchResultViewController, animated: true)
     }
     
 }

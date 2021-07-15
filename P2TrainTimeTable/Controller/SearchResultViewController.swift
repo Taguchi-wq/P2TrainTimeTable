@@ -15,3 +15,7 @@ class SearchResultViewController: UIViewController {
     }
 
 }
+
+
+// MARK: - Reusable
+extension SearchResultViewController: Reusable {}
