@@ -15,6 +15,8 @@
 		7F44BA2C26A061F4005CF92B /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA2B26A061F4005CF92B /* SearchResultViewController.swift */; };
 		7F44BA2E26A06201005CF92B /* SearchResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA2D26A06201005CF92B /* SearchResult.storyboard */; };
 		7F44BA3126A06495005CF92B /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3026A06495005CF92B /* Reusable.swift */; };
+		7F44BA3426A06C74005CF92B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3326A06C74005CF92B /* NetworkManager.swift */; };
+		7F44BA3726A1DE13005CF92B /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3626A1DE13005CF92B /* Station.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		7F44BA2B26A061F4005CF92B /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		7F44BA2D26A06201005CF92B /* SearchResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResult.storyboard; sourceTree = "<group>"; };
 		7F44BA3026A06495005CF92B /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		7F44BA3326A06C74005CF92B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7F44BA3626A1DE13005CF92B /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			isa = PBXGroup;
 			children = (
 				7F44BA2A26A05684005CF92B /* Application */,
+				7F44BA3226A06BFC005CF92B /* Manager */,
+				7F44BA3526A1DD60005CF92B /* Model */,
 				7F44BA2926A0566B005CF92B /* View */,
 				7F44BA2826A05653005CF92B /* Controller */,
 				7F44BA2F26A0643A005CF92B /* Protocol */,
@@ -103,6 +109,22 @@
 				7F44BA3026A06495005CF92B /* Reusable.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		7F44BA3226A06BFC005CF92B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7F44BA3326A06C74005CF92B /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		7F44BA3526A1DD60005CF92B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F44BA3626A1DE13005CF92B /* Station.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +201,9 @@
 			files = (
 				7F44BA3126A06495005CF92B /* Reusable.swift in Sources */,
 				7F44BA1326A052D5005CF92B /* AppDelegate.swift in Sources */,
+				7F44BA3426A06C74005CF92B /* NetworkManager.swift in Sources */,
 				7F44BA2C26A061F4005CF92B /* SearchResultViewController.swift in Sources */,
+				7F44BA3726A1DE13005CF92B /* Station.swift in Sources */,
 				7F44BA2526A055B3005CF92B /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
