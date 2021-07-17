@@ -32,8 +32,9 @@ class HomeViewController: UIViewController {
     }
     
     /// SearchResultViewControllerに遷移する
-    private func transitionToSearchResultViewController() {
+    private func transitionToSearchResultViewController(station: String) {
         let searchResultViewController = storyboard?.instantiateViewController(withIdentifier: SearchResultViewController.reuseIdentifier) as! SearchResultViewController
+        searchResultViewController.initialize(station: station)
         navigationController?.pushViewController(searchResultViewController, animated: true)
     }
     
@@ -45,7 +46,8 @@ extension HomeViewController: UISearchBarDelegate {
     
     /// キーボードの「検索」ボタンを押した時に呼ばれる
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        transitionToSearchResultViewController()
+        guard let station = searchBar.text else { return }
+        transitionToSearchResultViewController(station: station)
     }
     
 }

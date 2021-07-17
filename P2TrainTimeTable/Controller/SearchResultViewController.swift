@@ -13,6 +13,8 @@ class SearchResultViewController: UIViewController {
     // MARK: - Properties
     /// 駅を格納する配列
     private var stations: [Station] = []
+    /// 検索バーに入力された駅名
+    private var station = String()
     
 
     // MARK: - @IBOutlet
@@ -27,7 +29,14 @@ class SearchResultViewController: UIViewController {
         super.viewDidLoad()
         
         setupTableView(lineTableView)
-        displayLineInTableView()
+        makeUI(station: station)
+    }
+    
+    
+    // MARK: - Initializer
+    // TODO: 強制的に呼ばせたい。。。
+    func initialize(station: String) {
+        self.station = station
     }
     
     
@@ -37,12 +46,20 @@ class SearchResultViewController: UIViewController {
         tableView.dataSource = self
     }
     
+    /// 画面のUIを作成
+    private func makeUI(station: String) {
+        stationLabel.text = station
+        displayLineInTableView(station: station)
+    }
+    
     /// tableViewに路線を表示する
-    private func displayLineInTableView() {
-        let station = "大久保"
-        let encodeStation = station.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
-        let url = URL(string: "https://api-tokyochallenge.odpt.org/api/v4/odpt:Station?dc:title=\(encodeStation)&acl:consumerKey=75LyUzspYl2pkwGesTzDTWWiOj-9xz9NnE_KU9yR7pU")
-        NetworkManager.shared.loadStations(url) { stations in
+    private func displayLineInTableView(station: String) {
+        NetworkManager.shared.loadStations(station) { (stations, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let stations = stations else { return }
             self.stations.append(contentsOf: stations)
             DispatchQueue.main.async { self.lineTableView.reloadData() }
         }

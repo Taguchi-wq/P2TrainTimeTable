@@ -10,10 +10,16 @@ import Foundation
 
 class NetworkManager {
     
-    // MARK: - Properties
+    // MARK: - Static Properties
     /// NetworkManagerのshared
     static let shared = NetworkManager()
-    private let url = ""
+    
+    
+    // MARK: - Private Properties
+    private let baseURL = "https://api-tokyochallenge.odpt.org/api/v4/"
+    private let type    = "odpt:Station?"
+    private let title   = "dc:title="
+    private let apiKey  = "&acl:consumerKey=75LyUzspYl2pkwGesTzDTWWiOj-9xz9NnE_KU9yR7pU"
     
     
     // MARK: - Initializer
@@ -22,22 +28,31 @@ class NetworkManager {
     
     // MARK: - Methods
     /// 駅の情報を読み込む
-    func loadStations(_ url: URL?, completion: @escaping ([Station]) -> Void) {
-        guard let url = url else { return }
+    func loadStations(_ station: String, completion: @escaping ([Station]?, Error?) -> Void) {
+        let encodeStation = station.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+        let urlString = baseURL + type + title + encodeStation + apiKey
+        guard let url = URL(string: urlString) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if let _ = error {
+                completion(nil, error)
                 return
             }
             
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(nil, error)
+                return
+            }
             
-            guard let data = data else { return }
+            guard let data = data else {
+                completion(nil, error)
+                return
+            }
             
             do {
                 let station = try JSONDecoder().decode([Station].self, from: data)
-                completion(station)
+                completion(station, nil)
             } catch {
                 print(error)
             }
