@@ -84,9 +84,9 @@ extension SearchResultViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = stations[indexPath.row].railway
-        return cell
+        let lineCell = tableView.dequeueReusableCell(withIdentifier: "lineCell", for: indexPath)
+        lineCell.textLabel?.text = stations[indexPath.row].railway
+        return lineCell
     }
     
 }
