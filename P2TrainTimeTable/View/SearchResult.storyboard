@@ -77,11 +77,20 @@
                     <connections>
                         <outlet property="lineTableView" destination="5Jj-xE-Vzi" id="me6-He-Ked"/>
                         <outlet property="stationLabel" destination="Sxn-Ob-My1" id="Yel-RQ-H3h"/>
+                        <segue destination="FR2-Fe-OAD" kind="show" id="B31-BF-wvu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bq9-tj-Lky" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="580" y="148.87556221889056"/>
+        </scene>
+        <!--Timetable-->
+        <scene sceneID="kUq-PV-bfb">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="TimetableViewController" storyboardName="Timetable" id="FR2-Fe-OAD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OEc-TH-p4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1266" y="148"/>
         </scene>
     </scenes>
 </document>

@@ -13,6 +13,8 @@ class TimetableViewController: UIViewController {
     /// MARK: - Properties
     /// タイムテーブルの情報を格納する配列
     private var timetable: [Timetable] = []
+    /// 駅
+    private var station: Station?
     
 
     // MARK: - @IBOutlets
@@ -31,6 +33,14 @@ class TimetableViewController: UIViewController {
         super.viewDidLoad()
         
         setupTableView(timetableTableView)
+        makeUI(station: station)
+    }
+    
+    
+    // MARK: - Initializer
+    // TODO: 強制的に呼ばせたい。。。
+    func initialize(station: Station) {
+        self.station = station
     }
     
     
@@ -38,6 +48,12 @@ class TimetableViewController: UIViewController {
     /// UITableViewを設定する
     private func setupTableView(_ tableView: UITableView) {
         tableView.dataSource = self
+    }
+    
+    /// 画面のUIを作成する
+    private func makeUI(station: Station?) {
+        guard let station = station else { return }
+        stationLineLabel.text = "\(station.title) - \(station.railway)"
     }
     
 }
@@ -56,3 +72,7 @@ extension TimetableViewController: UITableViewDataSource {
     }
     
 }
+
+
+// MARK: - Reusable
+extension TimetableViewController: Reusable {}

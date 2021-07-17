@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Timetable View Controller-->
+        <!--路線-->
         <scene sceneID="kDe-mw-2Ph">
             <objects>
                 <viewController storyboardIdentifier="TimetableViewController" id="fFV-1B-vDM" customClass="TimetableViewController" customModule="P2TrainTimeTable" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,6 +84,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nN7-Sv-qt0"/>
                     </view>
+                    <navigationItem key="navigationItem" title="路線" id="oud-3w-nOQ"/>
                     <connections>
                         <outlet property="directionSegmentedControl" destination="CCW-YH-fyF" id="bLW-Tf-CMf"/>
                         <outlet property="favoriteButton" destination="2Hd-Se-ZxE" id="qBh-DP-KRA"/>
@@ -93,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tH8-Y9-iEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-170.40000000000001" y="135.38230884557723"/>
+            <point key="canvasLocation" x="768.79999999999995" y="135.38230884557723"/>
         </scene>
     </scenes>
     <resources>

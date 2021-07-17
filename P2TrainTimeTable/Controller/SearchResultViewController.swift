@@ -44,6 +44,7 @@ class SearchResultViewController: UIViewController {
     /// UITableViewを設定する
     private func setupTableView(_ tableView: UITableView) {
         tableView.dataSource = self
+        tableView.delegate   = self
     }
     
     /// 画面のUIを作成
@@ -64,6 +65,13 @@ class SearchResultViewController: UIViewController {
             DispatchQueue.main.async { self.lineTableView.reloadData() }
         }
     }
+    
+    /// TimetableViewControllerに遷移する
+    private func transitionToTimetableViewController(indexPath: IndexPath) {
+        let timetableViewController = storyboard?.instantiateViewController(withIdentifier: TimetableViewController.reuseIdentifier) as! TimetableViewController
+        timetableViewController.initialize(station: stations[indexPath.row])
+        navigationController?.pushViewController(timetableViewController, animated: true)
+    }
 
 }
 
@@ -83,6 +91,15 @@ extension SearchResultViewController: UITableViewDataSource {
     
 }
 
+
+// MARK: - UITableViewDelegate
+extension SearchResultViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        transitionToTimetableViewController(indexPath: indexPath)
+    }
+    
+}
 
 // MARK: - Reusable
 extension SearchResultViewController: Reusable {}
