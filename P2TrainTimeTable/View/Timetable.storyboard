@@ -16,13 +16,81 @@
                     <view key="view" contentMode="scaleToFill" id="Lj8-gc-J5V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="cAI-Qu-Yjp">
+                                <rect key="frame" x="16" y="30" width="343" height="76"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4LN-CD-ZVv">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大久保 - 総武線" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOi-vI-B9f">
+                                                <rect key="frame" x="0.0" y="0.0" width="313" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Hd-Se-ZxE">
+                                                <rect key="frame" x="313" y="0.0" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="VOW-8P-Q1Y"/>
+                                                    <constraint firstAttribute="height" constant="30" id="Yhp-B2-NfI"/>
+                                                </constraints>
+                                                <state key="normal" image="star"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="CCW-YH-fyF">
+                                        <rect key="frame" x="0.0" y="48" width="343" height="29"/>
+                                        <segments>
+                                            <segment title="上り"/>
+                                            <segment title="下り"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WM0-tF-O4u">
+                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeCell" textLabel="MgP-Aj-S4Y" rowHeight="53" style="IBUITableViewCellStyleDefault" id="u0r-Uj-K3G">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u0r-Uj-K3G" id="sPc-fQ-eqp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="52.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MgP-Aj-S4Y">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="52.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nN7-Sv-qt0" firstAttribute="trailing" secondItem="WM0-tF-O4u" secondAttribute="trailing" id="0dP-s0-G9s"/>
+                            <constraint firstItem="nN7-Sv-qt0" firstAttribute="trailing" secondItem="cAI-Qu-Yjp" secondAttribute="trailing" constant="16" id="1ls-2O-aAj"/>
+                            <constraint firstItem="nN7-Sv-qt0" firstAttribute="bottom" secondItem="WM0-tF-O4u" secondAttribute="bottom" id="486-Au-25J"/>
+                            <constraint firstItem="WM0-tF-O4u" firstAttribute="leading" secondItem="nN7-Sv-qt0" secondAttribute="leading" id="MV7-fj-uZd"/>
+                            <constraint firstItem="cAI-Qu-Yjp" firstAttribute="leading" secondItem="nN7-Sv-qt0" secondAttribute="leading" constant="16" id="eEW-Oa-EU3"/>
+                            <constraint firstItem="WM0-tF-O4u" firstAttribute="top" secondItem="cAI-Qu-Yjp" secondAttribute="bottom" constant="8" id="rDg-mc-lzc"/>
+                            <constraint firstItem="cAI-Qu-Yjp" firstAttribute="top" secondItem="nN7-Sv-qt0" secondAttribute="top" constant="10" id="rkH-l3-A9H"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nN7-Sv-qt0"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tH8-Y9-iEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-170" y="136"/>
+            <point key="canvasLocation" x="-170.40000000000001" y="135.38230884557723"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="star" width="50" height="50"/>
+    </resources>
 </document>
