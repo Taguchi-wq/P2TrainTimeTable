@@ -15,24 +15,13 @@ class NetworkManager {
     static let shared = NetworkManager()
     
     
-    // MARK: - Private Properties
-    private let baseURL = "https://api-tokyochallenge.odpt.org/api/v4/"
-    private let type    = "odpt:Station?"
-    private let title   = "dc:title="
-    private let apiKey  = "&acl:consumerKey=75LyUzspYl2pkwGesTzDTWWiOj-9xz9NnE_KU9yR7pU"
-    
-    
     // MARK: - Initializer
     private init() {}
     
     
     // MARK: - Methods
-    /// 駅の情報を読み込む
-    func loadStations(_ station: String, completion: @escaping ([Station]?, Error?) -> Void) {
-        let encodeStation = station.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
-        let urlString = baseURL + type + title + encodeStation + apiKey
-        guard let url = URL(string: urlString) else { return }
-        
+    /// APIから情報を読み込む
+    func load<T: Decodable>(_ url: URL, type: T.Type, completion: @escaping ([T]?, Error?) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if let _ = error {
@@ -51,8 +40,8 @@ class NetworkManager {
             }
             
             do {
-                let station = try JSONDecoder().decode([Station].self, from: data)
-                completion(station, nil)
+                let typeObjects = try JSONDecoder().decode([T].self, from: data)
+                DispatchQueue.main.async { completion(typeObjects, nil) }
             } catch {
                 print(error)
             }

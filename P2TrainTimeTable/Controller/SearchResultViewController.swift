@@ -15,8 +15,13 @@ class SearchResultViewController: UIViewController {
     private var stations: [Station] = []
     /// 検索バーに入力された駅名
     private var stationTitle = String()
-    
+    /// URL
+    private let baseURL     = "https://api-tokyochallenge.odpt.org/api/v4/"
+    private let typeStation = "odpt:Station?"
+    private let searchTitle = "dc:title="
+    private let apiKey      = "&acl:consumerKey=75LyUzspYl2pkwGesTzDTWWiOj-9xz9NnE_KU9yR7pU"
 
+    
     // MARK: - @IBOutlet
     /// 駅を表示するUILabel
     @IBOutlet private weak var stationLabel: UILabel!
@@ -53,16 +58,24 @@ class SearchResultViewController: UIViewController {
         displayLineInTableView(stationTitle: stationTitle)
     }
     
+    /// tableViewをリロードする
+    private func reloadTableView(stations: [Station]?) {
+        guard let stations = stations else { return }
+        self.stations.append(contentsOf: stations)
+        self.lineTableView.reloadData()
+    }
+    
     /// tableViewに路線を表示する
     private func displayLineInTableView(stationTitle: String) {
-        NetworkManager.shared.loadStations(stationTitle) { (stations, error) in
+        let encodeStation = stationTitle.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+        let urlString = baseURL + typeStation + searchTitle + encodeStation + apiKey
+        guard let url = URL(string: urlString) else { return }
+        NetworkManager.shared.load(url, type: Station.self) { (stations, error) in
             if let error = error {
                 print(error)
             }
             
-            guard let stations = stations else { return }
-            self.stations.append(contentsOf: stations)
-            DispatchQueue.main.async { self.lineTableView.reloadData() }
+            self.reloadTableView(stations: stations)
         }
     }
     
