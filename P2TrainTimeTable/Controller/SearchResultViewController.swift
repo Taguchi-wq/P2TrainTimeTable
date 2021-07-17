@@ -14,11 +14,11 @@ class SearchResultViewController: UIViewController {
     /// 駅を格納する配列
     private var stations: [Station] = []
     /// 検索バーに入力された駅名
-    private var station = String()
+    private var stationTitle = String()
     
 
     // MARK: - @IBOutlet
-    /// 駅をし表示するUILabel
+    /// 駅を表示するUILabel
     @IBOutlet private weak var stationLabel: UILabel!
     /// 路線を表示するUITableView
     @IBOutlet private weak var lineTableView: UITableView!
@@ -29,14 +29,14 @@ class SearchResultViewController: UIViewController {
         super.viewDidLoad()
         
         setupTableView(lineTableView)
-        makeUI(station: station)
+        makeUI(stationTitle: stationTitle)
     }
     
     
     // MARK: - Initializer
     // TODO: 強制的に呼ばせたい。。。
-    func initialize(station: String) {
-        self.station = station
+    func initialize(stationTitle: String) {
+        self.stationTitle = stationTitle
     }
     
     
@@ -48,14 +48,14 @@ class SearchResultViewController: UIViewController {
     }
     
     /// 画面のUIを作成
-    private func makeUI(station: String) {
-        stationLabel.text = station
-        displayLineInTableView(station: station)
+    private func makeUI(stationTitle: String) {
+        stationLabel.text = stationTitle
+        displayLineInTableView(stationTitle: stationTitle)
     }
     
     /// tableViewに路線を表示する
-    private func displayLineInTableView(station: String) {
-        NetworkManager.shared.loadStations(station) { (stations, error) in
+    private func displayLineInTableView(stationTitle: String) {
+        NetworkManager.shared.loadStations(stationTitle) { (stations, error) in
             if let error = error {
                 print(error)
             }

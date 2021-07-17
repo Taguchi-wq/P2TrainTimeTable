@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
     /// SearchResultViewControllerに遷移する
     private func transitionToSearchResultViewController(station: String) {
         let searchResultViewController = storyboard?.instantiateViewController(withIdentifier: SearchResultViewController.reuseIdentifier) as! SearchResultViewController
-        searchResultViewController.initialize(station: station)
+        searchResultViewController.initialize(stationTitle: station)
         navigationController?.pushViewController(searchResultViewController, animated: true)
     }
     
