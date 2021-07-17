@@ -52,7 +52,7 @@
                                 <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeCell" textLabel="MgP-Aj-S4Y" rowHeight="53" style="IBUITableViewCellStyleDefault" id="u0r-Uj-K3G">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timetableCell" textLabel="MgP-Aj-S4Y" rowHeight="53" style="IBUITableViewCellStyleDefault" id="u0r-Uj-K3G">
                                         <rect key="frame" x="0.0" y="28" width="375" height="53"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u0r-Uj-K3G" id="sPc-fQ-eqp">
@@ -84,6 +84,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nN7-Sv-qt0"/>
                     </view>
+                    <connections>
+                        <outlet property="directionSegmentedControl" destination="CCW-YH-fyF" id="bLW-Tf-CMf"/>
+                        <outlet property="favoriteButton" destination="2Hd-Se-ZxE" id="qBh-DP-KRA"/>
+                        <outlet property="stationLineLabel" destination="aOi-vI-B9f" id="tBV-1F-dgx"/>
+                        <outlet property="timetableTableView" destination="WM0-tF-O4u" id="TyA-60-WzY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tH8-Y9-iEq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

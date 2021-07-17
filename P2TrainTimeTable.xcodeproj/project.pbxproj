@@ -19,6 +19,8 @@
 		7F44BA3726A1DE13005CF92B /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3626A1DE13005CF92B /* Station.swift */; };
 		7F44BA3926A2D3E8005CF92B /* TimetableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3826A2D3E8005CF92B /* TimetableViewController.swift */; };
 		7F44BA3B26A2D402005CF92B /* Timetable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA3A26A2D402005CF92B /* Timetable.storyboard */; };
+		7F44BA3D26A2DF41005CF92B /* TimetableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3C26A2DF41005CF92B /* TimetableObject.swift */; };
+		7F44BA3F26A2ECDB005CF92B /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3E26A2ECDB005CF92B /* Timetable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		7F44BA3626A1DE13005CF92B /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
 		7F44BA3826A2D3E8005CF92B /* TimetableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableViewController.swift; sourceTree = "<group>"; };
 		7F44BA3A26A2D402005CF92B /* Timetable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timetable.storyboard; sourceTree = "<group>"; };
+		7F44BA3C26A2DF41005CF92B /* TimetableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableObject.swift; sourceTree = "<group>"; };
+		7F44BA3E26A2ECDB005CF92B /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				7F44BA3626A1DE13005CF92B /* Station.swift */,
+				7F44BA3E26A2ECDB005CF92B /* Timetable.swift */,
+				7F44BA3C26A2DF41005CF92B /* TimetableObject.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,10 +214,12 @@
 			files = (
 				7F44BA3926A2D3E8005CF92B /* TimetableViewController.swift in Sources */,
 				7F44BA3126A06495005CF92B /* Reusable.swift in Sources */,
+				7F44BA3F26A2ECDB005CF92B /* Timetable.swift in Sources */,
 				7F44BA1326A052D5005CF92B /* AppDelegate.swift in Sources */,
 				7F44BA3426A06C74005CF92B /* NetworkManager.swift in Sources */,
 				7F44BA2C26A061F4005CF92B /* SearchResultViewController.swift in Sources */,
 				7F44BA3726A1DE13005CF92B /* Station.swift in Sources */,
+				7F44BA3D26A2DF41005CF92B /* TimetableObject.swift in Sources */,
 				7F44BA2526A055B3005CF92B /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
