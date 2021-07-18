@@ -17,7 +17,7 @@ class SearchResultViewController: UIViewController {
     private var stationTitle = String()
     /// URL
     private let baseURL     = "https://api-tokyochallenge.odpt.org/api/v4/"
-    private let typeStation = "odpt:Station?"
+    private let type        = "odpt:Station?"
     private let searchTitle = "dc:title="
     private let apiKey      = "&acl:consumerKey=75LyUzspYl2pkwGesTzDTWWiOj-9xz9NnE_KU9yR7pU"
 
@@ -68,7 +68,7 @@ class SearchResultViewController: UIViewController {
     /// tableViewに路線を表示する
     private func displayLineInTableView(stationTitle: String) {
         let encodeStation = stationTitle.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
-        let urlString = baseURL + typeStation + searchTitle + encodeStation + apiKey
+        let urlString = baseURL + type + searchTitle + encodeStation + apiKey
         guard let url = URL(string: urlString) else { return }
         NetworkManager.shared.load(url, type: Station.self) { (stations, error) in
             if let error = error {

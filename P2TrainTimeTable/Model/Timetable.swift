@@ -12,6 +12,6 @@ struct Timetable: Decodable {
     let timetableObject: [TimetableObject]
     
     enum CodingKeys: String, CodingKey {
-        case timetableObject = "odpt:stationTimetable"
+        case timetableObject = "odpt:stationTimetableObject"
     }
 }

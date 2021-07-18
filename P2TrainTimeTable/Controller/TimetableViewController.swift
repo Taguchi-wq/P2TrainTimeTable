@@ -15,8 +15,13 @@ class TimetableViewController: UIViewController {
     private var timetable: [Timetable] = []
     /// 駅
     private var station: Station?
+    /// URL
+    private let baseURL = "https://api-tokyochallenge.odpt.org/api/v4/"
+    private let type    = "odpt:StationTimetable?"
+    private let sameAs  = "owl:sameAs="
+    private let apiKey  = "&acl:consumerKey=75LyUzspYl2pkwGesTzDTWWiOj-9xz9NnE_KU9yR7pU"
     
-
+    
     // MARK: - @IBOutlets
     /// 駅と路線を表示するUILabel
     @IBOutlet private weak var stationLineLabel: UILabel!
@@ -54,6 +59,28 @@ class TimetableViewController: UIViewController {
     private func makeUI(station: Station?) {
         guard let station = station else { return }
         stationLineLabel.text = "\(station.title) - \(station.railway)"
+        displayTimetableInTableView(stationTimetable: station.stationTimetable?.first)
+    }
+    
+    /// tableViewをリロードする
+    private func reloadTableView(timetable: [Timetable]?) {
+        guard let timetable = timetable else { return }
+        self.timetable.append(contentsOf: timetable)
+        self.timetableTableView.reloadData()
+    }
+    
+    /// tableViewにタイムテーブルを表示する
+    private func displayTimetableInTableView(stationTimetable: String?) {
+        guard let stationTimetable = stationTimetable else { return }
+        let urlString = baseURL + type + sameAs + stationTimetable + apiKey
+        guard let url = URL(string: urlString) else { return }
+        NetworkManager.shared.load(url, type: Timetable.self) { (timetable, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            self.reloadTableView(timetable: timetable)
+        }
     }
     
 }
@@ -63,11 +90,14 @@ class TimetableViewController: UIViewController {
 extension TimetableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return timetable.count
+        guard let timetableObjects = timetable.first?.timetableObject else { return 0 }
+        return timetableObjects.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let timetableCell = tableView.dequeueReusableCell(withIdentifier: "timetableCell", for: indexPath)
+        let timetableObject = timetable.first?.timetableObject[indexPath.row]
+        timetableCell.textLabel?.text = timetableObject?.departureTime
         return timetableCell
     }
     
