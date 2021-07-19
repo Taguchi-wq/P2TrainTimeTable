@@ -10,6 +10,22 @@ import UIKit
 
 class TimetableViewController: UIViewController {
     
+    // MARK: - Enums
+    /// 方向
+    private enum Direction: Int {
+        case up   = 0
+        case down = 1
+    }
+    
+    /// 曜日種別と方面
+    private enum StationTimetable: Int {
+        case weekdayUp   = 0
+        case holidayUp   = 1
+        case weekdayDown = 2
+        case holidayDown = 3
+    }
+    
+    
     /// MARK: - Properties
     /// タイムテーブルの情報を格納する配列
     private var timetable: [Timetable] = []
@@ -59,12 +75,13 @@ class TimetableViewController: UIViewController {
     private func makeUI(station: Station?) {
         guard let station = station else { return }
         stationLineLabel.text = "\(station.title) - \(station.railway)"
-        displayTimetableInTableView(stationTimetable: station.stationTimetable?.first)
+        displayTimetableInTableView(stationTimetable: station.stationTimetable?[StationTimetable.weekdayUp.rawValue])
     }
     
     /// tableViewをリロードする
     private func reloadTableView(timetable: [Timetable]?) {
         guard let timetable = timetable else { return }
+        self.timetable = []
         self.timetable.append(contentsOf: timetable)
         self.timetableTableView.reloadData()
     }
@@ -81,6 +98,21 @@ class TimetableViewController: UIViewController {
             
             self.reloadTableView(timetable: timetable)
         }
+    }
+    
+    // MARK: - @IBActions
+    /// 方面を選んだ時に呼ばれる
+    @IBAction private func selectedDirection(_ sender: UISegmentedControl) {
+        guard let station = station else { return }
+        
+        let direction = Direction(rawValue: sender.selectedSegmentIndex) ?? .up
+        switch direction {
+        case .up:
+            displayTimetableInTableView(stationTimetable: station.stationTimetable?[StationTimetable.weekdayUp.rawValue])
+        case .down:
+            displayTimetableInTableView(stationTimetable: station.stationTimetable?[StationTimetable.weekdayDown.rawValue])
+        }
+        
     }
     
 }

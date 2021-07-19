@@ -45,6 +45,9 @@
                                             <segment title="上り"/>
                                             <segment title="下り"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="selectedDirection:" destination="fFV-1B-vDM" eventType="valueChanged" id="xsB-ez-jUb"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                             </stackView>
