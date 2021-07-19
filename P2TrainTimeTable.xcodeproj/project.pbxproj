@@ -21,6 +21,8 @@
 		7F44BA3B26A2D402005CF92B /* Timetable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA3A26A2D402005CF92B /* Timetable.storyboard */; };
 		7F44BA3D26A2DF41005CF92B /* TimetableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3C26A2DF41005CF92B /* TimetableObject.swift */; };
 		7F44BA3F26A2ECDB005CF92B /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3E26A2ECDB005CF92B /* Timetable.swift */; };
+		7F44BA4126A5BFEA005CF92B /* URL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA4026A5BFE9005CF92B /* URL.plist */; };
+		7F44BA4326A5C20F005CF92B /* KeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA4226A5C20F005CF92B /* KeyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		7F44BA3A26A2D402005CF92B /* Timetable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timetable.storyboard; sourceTree = "<group>"; };
 		7F44BA3C26A2DF41005CF92B /* TimetableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableObject.swift; sourceTree = "<group>"; };
 		7F44BA3E26A2ECDB005CF92B /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
+		7F44BA4026A5BFE9005CF92B /* URL.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = URL.plist; sourceTree = "<group>"; };
+		7F44BA4226A5C20F005CF92B /* KeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 				7F44BA2F26A0643A005CF92B /* Protocol */,
 				7F44BA1926A052D5005CF92B /* Assets.xcassets */,
 				7F44BA1E26A052D5005CF92B /* Info.plist */,
+				7F44BA4026A5BFE9005CF92B /* URL.plist */,
 			);
 			path = P2TrainTimeTable;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				7F44BA3326A06C74005CF92B /* NetworkManager.swift */,
+				7F44BA4226A5C20F005CF92B /* KeyManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 			files = (
 				7F44BA2726A055C0005CF92B /* Home.storyboard in Resources */,
 				7F44BA1D26A052D5005CF92B /* LaunchScreen.storyboard in Resources */,
+				7F44BA4126A5BFEA005CF92B /* URL.plist in Resources */,
 				7F44BA1A26A052D5005CF92B /* Assets.xcassets in Resources */,
 				7F44BA3B26A2D402005CF92B /* Timetable.storyboard in Resources */,
 				7F44BA2E26A06201005CF92B /* SearchResult.storyboard in Resources */,
@@ -213,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F44BA3926A2D3E8005CF92B /* TimetableViewController.swift in Sources */,
+				7F44BA4326A5C20F005CF92B /* KeyManager.swift in Sources */,
 				7F44BA3126A06495005CF92B /* Reusable.swift in Sources */,
 				7F44BA3F26A2ECDB005CF92B /* Timetable.swift in Sources */,
 				7F44BA1326A052D5005CF92B /* AppDelegate.swift in Sources */,

@@ -31,11 +31,6 @@ class TimetableViewController: UIViewController {
     private var timetable: [Timetable] = []
     /// 駅
     private var station: Station?
-    /// URL
-    private let baseURL = "https://api-tokyochallenge.odpt.org/api/v4/"
-    private let type    = "odpt:StationTimetable?"
-    private let sameAs  = "owl:sameAs="
-    private let apiKey  = "&acl:consumerKey=75LyUzspYl2pkwGesTzDTWWiOj-9xz9NnE_KU9yR7pU"
     
     
     // MARK: - @IBOutlets
@@ -78,6 +73,20 @@ class TimetableViewController: UIViewController {
         displayTimetableInTableView(stationTimetable: station.stationTimetable?[StationTimetable.weekdayUp.rawValue])
     }
     
+    /// 駅のタイムテーブルを検索するURLを作る
+    private func makeSearchStationTimetableURL(_ stationTimetable: String) -> URL? {
+        var components = URLComponents()
+        components.scheme = KeyManager.getValue("Scheme")
+        components.host   = KeyManager.getValue("Host")
+        components.path   = KeyManager.getValue("PathStationTable")
+        components.queryItems = [
+            URLQueryItem(name: "owl:sameAs",      value: stationTimetable),
+            URLQueryItem(name: "acl:consumerKey", value: KeyManager.getValue("Key"))
+        ]
+        
+        return components.url
+    }
+    
     /// tableViewをリロードする
     private func reloadTableView(timetable: [Timetable]?) {
         guard let timetable = timetable else { return }
@@ -89,8 +98,7 @@ class TimetableViewController: UIViewController {
     /// tableViewにタイムテーブルを表示する
     private func displayTimetableInTableView(stationTimetable: String?) {
         guard let stationTimetable = stationTimetable else { return }
-        let urlString = baseURL + type + sameAs + stationTimetable + apiKey
-        guard let url = URL(string: urlString) else { return }
+        guard let url = makeSearchStationTimetableURL(stationTimetable) else { return }
         NetworkManager.shared.load(url, type: Timetable.self) { (timetable, error) in
             if let error = error {
                 print(error)

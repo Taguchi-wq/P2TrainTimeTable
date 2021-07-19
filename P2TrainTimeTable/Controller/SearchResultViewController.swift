@@ -15,11 +15,6 @@ class SearchResultViewController: UIViewController {
     private var stations: [Station] = []
     /// 検索バーに入力された駅名
     private var stationTitle = String()
-    /// URL
-    private let baseURL     = "https://api-tokyochallenge.odpt.org/api/v4/"
-    private let type        = "odpt:Station?"
-    private let searchTitle = "dc:title="
-    private let apiKey      = "&acl:consumerKey=75LyUzspYl2pkwGesTzDTWWiOj-9xz9NnE_KU9yR7pU"
 
     
     // MARK: - @IBOutlet
@@ -58,6 +53,20 @@ class SearchResultViewController: UIViewController {
         displayLineInTableView(stationTitle: stationTitle)
     }
     
+    /// 駅を検索するURLを作る
+    private func makeSearchStationURL(_ stationTitle: String) -> URL? {
+        var components = URLComponents()
+        components.scheme = KeyManager.getValue("Scheme")
+        components.host   = KeyManager.getValue("Host")
+        components.path   = KeyManager.getValue("PathStation")
+        components.queryItems = [
+            URLQueryItem(name: "dc:title",        value: stationTitle),
+            URLQueryItem(name: "acl:consumerKey", value: KeyManager.getValue("Key"))
+        ]
+        
+        return components.url
+    }
+    
     /// tableViewをリロードする
     private func reloadTableView(stations: [Station]?) {
         guard let stations = stations else { return }
@@ -67,9 +76,7 @@ class SearchResultViewController: UIViewController {
     
     /// tableViewに路線を表示する
     private func displayLineInTableView(stationTitle: String) {
-        let encodeStation = stationTitle.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
-        let urlString = baseURL + type + searchTitle + encodeStation + apiKey
-        guard let url = URL(string: urlString) else { return }
+        guard let url = makeSearchStationURL(stationTitle) else { return }
         NetworkManager.shared.load(url, type: Station.self) { (stations, error) in
             if let error = error {
                 print(error)
