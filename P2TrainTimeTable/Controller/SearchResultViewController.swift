@@ -53,20 +53,6 @@ class SearchResultViewController: UIViewController {
         displayLineInTableView(stationTitle: stationTitle)
     }
     
-    /// 駅を検索するURLを作る
-    private func makeSearchStationURL(_ stationTitle: String) -> URL? {
-        var components = URLComponents()
-        components.scheme = KeyManager.getValue("Scheme")
-        components.host   = KeyManager.getValue("Host")
-        components.path   = KeyManager.getValue("PathStation")
-        components.queryItems = [
-            URLQueryItem(name: "dc:title",        value: stationTitle),
-            URLQueryItem(name: "acl:consumerKey", value: KeyManager.getValue("Key"))
-        ]
-        
-        return components.url
-    }
-    
     /// tableViewをリロードする
     private func reloadTableView(stations: [Station]?) {
         guard let stations = stations else { return }
@@ -76,7 +62,7 @@ class SearchResultViewController: UIViewController {
     
     /// tableViewに路線を表示する
     private func displayLineInTableView(stationTitle: String) {
-        guard let url = makeSearchStationURL(stationTitle) else { return }
+        guard let url = URL.stationURL(stationTitle) else { return }
         NetworkManager.shared.load(url, type: Station.self) { (stations, error) in
             if let error = error {
                 print(error)
