@@ -64,6 +64,7 @@ class TimetableViewController: UIViewController {
     /// UITableViewを設定する
     private func setupTableView(_ tableView: UITableView) {
         tableView.dataSource = self
+        tableView.delegate   = self
     }
     
     /// 画面のUIを作成する
@@ -126,6 +127,16 @@ extension TimetableViewController: UITableViewDataSource {
         let timetableObject = timetable.first?.timetableObject[indexPath.row]
         timetableCell.textLabel?.text = timetableObject?.departureTime
         return timetableCell
+    }
+    
+}
+
+
+// MARK: -
+extension TimetableViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "時刻表"
     }
     
 }
