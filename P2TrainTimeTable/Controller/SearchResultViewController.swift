@@ -105,6 +105,10 @@ extension SearchResultViewController: UITableViewDelegate {
         transitionToTimetableViewController(indexPath: indexPath)
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "路線"
+    }
+    
 }
 
 // MARK: - Reusable
