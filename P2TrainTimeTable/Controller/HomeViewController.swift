@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
         
         setupSearchBar(searchBar)
         setupTableView(favoritesTableView)
+        setupTapGesture(favoritesTableView)
         appendFavoriteStation()
     }
     
@@ -51,6 +52,13 @@ class HomeViewController: UIViewController {
         tableView.delegate   = self
     }
     
+    /// TapGestureの設定をする
+    private func setupTapGesture(_ tableView: UITableView) {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        tableView.addGestureRecognizer(tapGesture)
+    }
+    
     /// お気に入りをか配列に入れる
     private func appendFavoriteStation() {
         let favoriteStations = RealmManager.shared.load(FavoriteStation.self)
@@ -62,6 +70,13 @@ class HomeViewController: UIViewController {
         let searchResultViewController = storyboard?.instantiateViewController(withIdentifier: SearchResultViewController.reuseIdentifier) as! SearchResultViewController
         searchResultViewController.initialize(stationTitle: stationTitle)
         navigationController?.pushViewController(searchResultViewController, animated: true)
+    }
+    
+    
+    // MARK: - @objc Methods
+    /// キーボードを隠す
+    @objc private func hideKeyboard() {
+        searchBar.resignFirstResponder()
     }
     
 }
@@ -101,6 +116,7 @@ extension HomeViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let stationTitle = searchBar.text else { return }
         transitionToSearchResultViewController(stationTitle: stationTitle)
+        hideKeyboard()
     }
     
 }
