@@ -84,7 +84,12 @@ class TimetableViewController: UIViewController {
     
     /// tableViewにタイムテーブルを表示する
     private func displayTimetableInTableView(stationTimetable: String?) {
-        guard let stationTimetable = stationTimetable else { return }
+        guard let stationTimetable = stationTimetable else {
+            timetable = []
+            timetableTableView.reloadData()
+            return
+        }
+        
         guard let url = URL.stationTimetableURL(stationTimetable) else { return }
         NetworkManager.shared.load(url, type: Timetable.self) { (timetable, error) in
             if let error = error {
@@ -104,9 +109,11 @@ class TimetableViewController: UIViewController {
         let direction = Direction(rawValue: sender.selectedSegmentIndex) ?? .up
         switch direction {
         case .up:
-            displayTimetableInTableView(stationTimetable: station.stationTimetable?[StationTimetable.weekdayUp.rawValue])
+            let weekdayUp = station.stationTimetable?[safe: StationTimetable.weekdayUp.rawValue]
+            displayTimetableInTableView(stationTimetable: weekdayUp)
         case .down:
-            displayTimetableInTableView(stationTimetable: station.stationTimetable?[StationTimetable.weekdayDown.rawValue])
+            let weekdayDown = station.stationTimetable?[safe: StationTimetable.weekdayDown.rawValue]
+            displayTimetableInTableView(stationTimetable: weekdayDown)
         }
         
     }
