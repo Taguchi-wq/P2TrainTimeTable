@@ -49,6 +49,7 @@ class TimetableViewController: UIViewController {
         super.viewDidLoad()
         
         setupTableView(timetableTableView)
+        setupButton(favoriteButton)
         makeUI(station: station)
     }
     
@@ -65,6 +66,12 @@ class TimetableViewController: UIViewController {
     private func setupTableView(_ tableView: UITableView) {
         tableView.dataSource = self
         tableView.delegate   = self
+    }
+    
+    /// UIButtonの設定をする
+    private func setupButton(_ button: UIButton) {
+        button.setImage(UIImage(named: Image.star.name), for: .normal)
+        button.setImage(UIImage(named: Image.starFill.name), for: .selected)
     }
     
     /// 画面のUIを作成する
@@ -116,6 +123,11 @@ class TimetableViewController: UIViewController {
             displayTimetableInTableView(stationTimetable: weekdayDown)
         }
         
+    }
+    
+    /// お気に入りボタンを押した時の処理
+    @IBAction private func tappedFavoriteButton(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
     }
     
 }

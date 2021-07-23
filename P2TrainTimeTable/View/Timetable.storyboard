@@ -36,6 +36,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="Yhp-B2-NfI"/>
                                                 </constraints>
                                                 <state key="normal" image="star"/>
+                                                <connections>
+                                                    <action selector="tappedFavoriteButton:" destination="fFV-1B-vDM" eventType="touchUpInside" id="Hiy-pO-x6Q"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
