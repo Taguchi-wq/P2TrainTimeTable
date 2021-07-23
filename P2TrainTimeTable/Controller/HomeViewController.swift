@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class HomeViewController: UIViewController {
+    
+    // MARK: - Properties
+    /// お気に入りの駅を格納する配列
+    private var favoriteStations: Results<FavoriteStation>!
+    
 
     // MARK: - @IBOutlet
     /// 駅を検索するUISearchBar
@@ -22,6 +28,8 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupSearchBar(searchBar)
+        setupTableView(favoritesTableView)
+        appendFavoriteStation()
     }
     
     
@@ -31,11 +39,50 @@ class HomeViewController: UIViewController {
         searchBar.delegate = self
     }
     
+    /// TableViewの設定をする
+    private func setupTableView(_ tableView: UITableView) {
+        tableView.dataSource = self
+        tableView.delegate   = self
+    }
+    
+    /// お気に入りをか配列に入れる
+    private func appendFavoriteStation() {
+        let favoriteStations = RealmManager.shared.load(FavoriteStation.self)
+        self.favoriteStations = favoriteStations
+    }
+    
     /// SearchResultViewControllerに遷移する
     private func transitionToSearchResultViewController(stationTitle: String) {
         let searchResultViewController = storyboard?.instantiateViewController(withIdentifier: SearchResultViewController.reuseIdentifier) as! SearchResultViewController
         searchResultViewController.initialize(stationTitle: stationTitle)
         navigationController?.pushViewController(searchResultViewController, animated: true)
+    }
+    
+}
+
+
+// MARK: - UITableViewDataSource
+extension HomeViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return favoriteStations.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let favoriteStationCell = tableView.dequeueReusableCell(withIdentifier: "favoriteStationCell", for: indexPath)
+        let favoriteStation = favoriteStations[indexPath.row]
+        favoriteStationCell.textLabel?.text = "\(favoriteStation.title ?? "") - \(favoriteStation.line ?? "")"
+        return favoriteStationCell
+    }
+    
+}
+
+
+// MARK: - UITableViewDelegate
+extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "お気に入り"
     }
     
 }

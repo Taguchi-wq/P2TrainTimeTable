@@ -24,4 +24,27 @@ class RealmManager {
     // MARK: - Initializer
     private init() {}
     
+    
+    // MARK: - Private Methods
+    /// Realmにobjectを保存する
+    private func write<T: Object>(_ object: T) {
+        do {
+            try realm.write { realm.add(object) }
+        } catch {
+            print(error)
+        }
+    }
+    
+    
+    // MARK: - Methods
+    /// Realmに保存されているobjectを読み込む
+    func load<T: Object>(_ object: T.Type) -> Results<T> {
+        return realm.objects(T.self)
+    }
+    
+    /// お気に入りの駅を保存する
+    func writeFavoriteStation(_ station: FavoriteStation) {
+        write(station)
+    }
+    
 }

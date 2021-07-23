@@ -10,7 +10,15 @@ import Foundation
 import RealmSwift
 
 class FavoriteStation: Object {
-    @objc dynamic var id   = String()
-    @objc dynamic var name = String()
-    @objc dynamic var line = String()
+    @objc dynamic var id: String!
+    @objc dynamic var title: String!
+    @objc dynamic var line: String!
+    
+    convenience init(id: String, title: String, line: String) {
+        self.init()
+        
+        self.id    = id
+        self.title = title
+        self.line  = line
+    }
 }
