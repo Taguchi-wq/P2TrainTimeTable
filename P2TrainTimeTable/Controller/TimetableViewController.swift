@@ -115,12 +115,14 @@ class TimetableViewController: UIViewController {
     private func save(station: Station) {
         let favoriteStation = FavoriteStation(id: station.id, title: station.title, line: station.railway)
         RealmManager.shared.writeFavoriteStation(favoriteStation)
+        Alert.presentSavedStation(on: self)
     }
     
     /// 駅をRealmから削除する
     private func delete(station: Station) {
         guard let favoriteStation = RealmManager.shared.loadFavoriteStationByPrimaryKey(station.id) else { return }
         RealmManager.shared.deleteFavoriteStation(favoriteStation)
+        Alert.presentDeletedStation(on: self)
     }
     
     
