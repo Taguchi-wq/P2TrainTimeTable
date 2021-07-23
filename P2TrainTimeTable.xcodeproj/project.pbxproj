@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,8 @@
 		7F44BA4126A5BFEA005CF92B /* URL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA4026A5BFE9005CF92B /* URL.plist */; };
 		7F44BA4326A5C20F005CF92B /* KeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA4226A5C20F005CF92B /* KeyManager.swift */; };
 		7F44BA4826A6ACA3005CF92B /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA4726A6ACA3005CF92B /* URL+Extension.swift */; };
+		7FCACA8C26AACA1E00069EE7 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCACA8B26AACA1E00069EE7 /* RealmManager.swift */; };
+		7FCACA9026AACC4F00069EE7 /* FavoriteStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCACA8F26AACC4F00069EE7 /* FavoriteStation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		7F44BA4026A5BFE9005CF92B /* URL.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = URL.plist; sourceTree = "<group>"; };
 		7F44BA4226A5C20F005CF92B /* KeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyManager.swift; sourceTree = "<group>"; };
 		7F44BA4726A6ACA3005CF92B /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		7FCACA8B26AACA1E00069EE7 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		7FCACA8F26AACC4F00069EE7 /* FavoriteStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +76,6 @@
 				06AAE4A588D7FF31AF47DE12 /* Pods-P2TrainTimeTable.debug.xcconfig */,
 				76ED776284B996BEEC841D0C /* Pods-P2TrainTimeTable.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -106,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				7F44BA2A26A05684005CF92B /* Application */,
-				7F44BA3226A06BFC005CF92B /* Manager */,
 				7F44BA3526A1DD60005CF92B /* Model */,
 				7F44BA2926A0566B005CF92B /* View */,
 				7F44BA2826A05653005CF92B /* Controller */,
@@ -161,6 +163,7 @@
 			children = (
 				7F44BA3326A06C74005CF92B /* NetworkManager.swift */,
 				7F44BA4226A5C20F005CF92B /* KeyManager.swift */,
+				7FCACA8B26AACA1E00069EE7 /* RealmManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -168,9 +171,8 @@
 		7F44BA3526A1DD60005CF92B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7F44BA3626A1DE13005CF92B /* Station.swift */,
-				7F44BA3E26A2ECDB005CF92B /* Timetable.swift */,
-				7F44BA3C26A2DF41005CF92B /* TimetableObject.swift */,
+				7F44BA3226A06BFC005CF92B /* Manager */,
+				7FCACA8A26AAC9F700069EE7 /* Entity */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,6 +184,17 @@
 				7F027A1E26AA9ED00051D6BF /* Array+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		7FCACA8A26AAC9F700069EE7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7F44BA3626A1DE13005CF92B /* Station.swift */,
+				7F44BA3E26A2ECDB005CF92B /* Timetable.swift */,
+				7F44BA3C26A2DF41005CF92B /* TimetableObject.swift */,
+				7FCACA8F26AACC4F00069EE7 /* FavoriteStation.swift */,
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,11 +315,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FCACA8C26AACA1E00069EE7 /* RealmManager.swift in Sources */,
 				7F44BA3926A2D3E8005CF92B /* TimetableViewController.swift in Sources */,
 				7F44BA4326A5C20F005CF92B /* KeyManager.swift in Sources */,
 				7F44BA3126A06495005CF92B /* Reusable.swift in Sources */,
 				7F027A1F26AA9ED00051D6BF /* Array+Extension.swift in Sources */,
 				7F44BA4826A6ACA3005CF92B /* URL+Extension.swift in Sources */,
+				7FCACA9026AACC4F00069EE7 /* FavoriteStation.swift in Sources */,
 				7F44BA3F26A2ECDB005CF92B /* Timetable.swift in Sources */,
 				7F44BA1326A052D5005CF92B /* AppDelegate.swift in Sources */,
 				7F44BA3426A06C74005CF92B /* NetworkManager.swift in Sources */,
