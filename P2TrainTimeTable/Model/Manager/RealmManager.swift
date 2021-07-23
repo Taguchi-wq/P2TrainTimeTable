@@ -35,6 +35,15 @@ class RealmManager {
         }
     }
     
+    /// Realmのobjectを削除する
+    private func delete<T: Object>(_ object: T) {
+        do {
+            try realm.write { realm.delete(object) }
+        } catch {
+            print(error)
+        }
+    }
+    
     
     // MARK: - Methods
     /// Realmに保存されているobjectを読み込む
@@ -42,9 +51,19 @@ class RealmManager {
         return realm.objects(T.self)
     }
     
+    /// プライマリーキーからお気に入りされた駅を読み込む
+    func loadFavoriteStationByPrimaryKey(_ primaryKey: String) -> FavoriteStation? {
+        return realm.object(ofType: FavoriteStation.self, forPrimaryKey: primaryKey)
+    }
+    
     /// お気に入りの駅を保存する
     func writeFavoriteStation(_ station: FavoriteStation) {
         write(station)
+    }
+    
+    /// お気に入りの駅を削除する
+    func deleteFavoriteStation(_ station: FavoriteStation) {
+        delete(station)
     }
     
 }

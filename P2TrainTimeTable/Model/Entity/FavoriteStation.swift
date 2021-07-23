@@ -21,4 +21,9 @@ class FavoriteStation: Object {
         self.title = title
         self.line  = line
     }
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
 }

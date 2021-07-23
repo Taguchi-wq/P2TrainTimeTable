@@ -32,6 +32,12 @@ class HomeViewController: UIViewController {
         appendFavoriteStation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        favoritesTableView.reloadData()
+    }
+    
     
     // MARK: - Private Methods
     /// SearchBarの設定をする

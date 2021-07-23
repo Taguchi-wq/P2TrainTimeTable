@@ -72,6 +72,10 @@ class TimetableViewController: UIViewController {
     private func setupButton(_ button: UIButton) {
         button.setImage(UIImage(named: Image.star.name), for: .normal)
         button.setImage(UIImage(named: Image.starFill.name), for: .selected)
+        
+        // お気に入りボタンの画像の状態
+        guard let station = station else { return }
+        button.isSelected = station.isSaved
     }
     
     /// 画面のUIを作成する
@@ -107,6 +111,18 @@ class TimetableViewController: UIViewController {
         }
     }
     
+    /// 駅をRealmに保存する
+    private func save(station: Station) {
+        let favoriteStation = FavoriteStation(id: station.id, title: station.title, line: station.railway)
+        RealmManager.shared.writeFavoriteStation(favoriteStation)
+    }
+    
+    /// 駅をRealmから削除する
+    private func delete(station: Station) {
+        guard let favoriteStation = RealmManager.shared.loadFavoriteStationByPrimaryKey(station.id) else { return }
+        RealmManager.shared.deleteFavoriteStation(favoriteStation)
+    }
+    
     
     // MARK: - @IBActions
     /// 方面を選んだ時に呼ばれる
@@ -127,7 +143,12 @@ class TimetableViewController: UIViewController {
     
     /// お気に入りボタンを押した時の処理
     @IBAction private func tappedFavoriteButton(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
+        guard let station = station else { return }
+        // 駅が保存されていたら削除
+        // 保存されていなかったら保存
+        station.isSaved ? delete(station: station) : save(station: station)
+        // お気に入りボタンの画像を変える
+        sender.isSelected = station.isSaved
     }
     
 }
