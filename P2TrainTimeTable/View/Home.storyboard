@@ -62,6 +62,7 @@
                         <outlet property="favoritesTableView" destination="MF2-o9-wsu" id="XQc-4n-Ete"/>
                         <outlet property="searchBar" destination="FMD-H9-rNr" id="qMn-Sk-q4Y"/>
                         <segue destination="5Hd-ZB-5Yo" kind="show" id="j64-sC-WSE"/>
+                        <segue destination="xEf-Dv-PzJ" kind="show" id="fLm-lD-2P4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PFd-n4-Uli" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -74,7 +75,15 @@
                 <viewControllerPlaceholder storyboardIdentifier="SearchResultViewController" storyboardName="SearchResult" id="5Hd-ZB-5Yo" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a98-Ax-fpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1521" y="157"/>
+            <point key="canvasLocation" x="1495" y="-53"/>
+        </scene>
+        <!--Timetable-->
+        <scene sceneID="QOS-hY-UEV">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="TimetableViewController" storyboardName="Timetable" id="xEf-Dv-PzJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7y8-N4-ngR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1495" y="323"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y7F-Zv-Dws">

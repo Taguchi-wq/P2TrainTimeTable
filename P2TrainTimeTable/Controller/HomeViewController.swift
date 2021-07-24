@@ -72,6 +72,29 @@ class HomeViewController: UIViewController {
         navigationController?.pushViewController(searchResultViewController, animated: true)
     }
     
+    /// TimetableViewControllerに遷移する
+    private func transitionToTimetableViewController(indexPath: IndexPath) {
+        // お気に入りに登録されている駅のIDを取得する
+        guard let stationID = favoriteStations[indexPath.row].id else { return }
+        // IDから駅を検索するURLを取得する
+        guard let url = URL.stationIDURL(stationID) else { return }
+        // URLから駅の情報を読み込む
+        NetworkManager.shared.load(url, type: Station.self) { (stations, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            // 駅はIDから取得するので結果は１つ
+            // なので、配列の最初を取得する
+            guard let station = stations?.first else { return }
+            // TimetableViewControllerに駅を渡して遷移する
+            guard let timetableViewController = self.storyboard?.instantiateViewController(withIdentifier: TimetableViewController.reuseIdentifier) as? TimetableViewController else { return }
+            timetableViewController.initialize(station: station)
+            self.navigationController?.pushViewController(timetableViewController, animated: true)
+        }
+        
+    }
+    
     
     // MARK: - @objc Methods
     /// キーボードを隠す
@@ -101,6 +124,10 @@ extension HomeViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension HomeViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        transitionToTimetableViewController(indexPath: indexPath)
+    }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "お気に入り"

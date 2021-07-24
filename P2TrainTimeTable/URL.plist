@@ -10,6 +10,8 @@
 	<string>/api/v4/odpt:Station</string>
 	<key>PathStationTable</key>
 	<string>/api/v4/odpt:StationTimetable</string>
+	<key>PathID</key>
+	<string>/api/v4/datapoints/</string>
 	<key>Key</key>
 	<string>75LyUzspYl2pkwGesTzDTWWiOj-9xz9NnE_KU9yR7pU</string>
 </dict>

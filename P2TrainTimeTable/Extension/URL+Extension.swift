@@ -38,4 +38,17 @@ extension URL {
         return components.url
     }
     
+    /// idから駅を検索するURL
+    static func stationIDURL(_ id: String) -> URL? {
+        var components = URLComponents()
+        components.scheme = KeyManager.getValue("Scheme")
+        components.host   = KeyManager.getValue("Host")
+        components.path   = KeyManager.getValue("PathID") + id
+        components.queryItems = [
+            URLQueryItem(name: "acl:consumerKey", value: KeyManager.getValue("Key"))
+        ]
+        
+        return components.url
+    }
+    
 }
