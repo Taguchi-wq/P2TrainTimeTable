@@ -129,6 +129,16 @@ extension HomeViewController: UITableViewDelegate {
         transitionToTimetableViewController(indexPath: indexPath)
     }
     
+    /// tableView上で削除する
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // お気に入りから駅を削除する
+            RealmManager.shared.deleteFavoriteStation(favoriteStations[indexPath.row])
+            // favoritesTableViewから駅を削除する
+            favoritesTableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "お気に入り"
     }
