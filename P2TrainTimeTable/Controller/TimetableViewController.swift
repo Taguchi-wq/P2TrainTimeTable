@@ -31,6 +31,8 @@ class TimetableViewController: UIViewController {
     private var timetable: [Timetable] = []
     /// 駅
     private var station: Station?
+    /// 今日
+    private let today = Date()
     
     
     // MARK: - @IBOutlets
@@ -82,7 +84,7 @@ class TimetableViewController: UIViewController {
     private func makeUI(station: Station?) {
         guard let station = station else { return }
         stationLineLabel.text = "\(station.title) - \(station.railway)"
-        displayTimetableInTableView(stationTimetable: station.stationTimetable?[StationTimetable.weekdayUp.rawValue])
+        displayUpTimetable(station: station)
     }
     
     /// tableViewをリロードする
@@ -94,7 +96,7 @@ class TimetableViewController: UIViewController {
     }
     
     /// tableViewにタイムテーブルを表示する
-    private func displayTimetableInTableView(stationTimetable: String?) {
+    private func displayTimetable(stationTimetable: String?) {
         guard let stationTimetable = stationTimetable else {
             timetable = []
             timetableTableView.reloadData()
@@ -109,6 +111,20 @@ class TimetableViewController: UIViewController {
             
             self.reloadTableView(timetable: timetable)
         }
+    }
+    
+    /// 上りのタイムテーブルを表示する
+    private func displayUpTimetable(station: Station) {
+        let timetable = today.isHoliday ? StationTimetable.holidayUp.rawValue : StationTimetable.weekdayUp.rawValue
+        let upTimetable = station.stationTimetable?[safe: timetable]
+        displayTimetable(stationTimetable: upTimetable)
+    }
+    
+    /// 下りのタイムテーブルを表示する
+    private func displayDownTimetable(station: Station) {
+        let timetable = today.isHoliday ? StationTimetable.holidayDown.rawValue : StationTimetable.weekdayDown.rawValue
+        let downTimetable = station.stationTimetable?[safe: timetable]
+        displayTimetable(stationTimetable: downTimetable)
     }
     
     /// 駅をRealmに保存する
@@ -130,15 +146,12 @@ class TimetableViewController: UIViewController {
     /// 方面を選んだ時に呼ばれる
     @IBAction private func selectedDirection(_ sender: UISegmentedControl) {
         guard let station = station else { return }
-        
         let direction = Direction(rawValue: sender.selectedSegmentIndex) ?? .up
         switch direction {
         case .up:
-            let weekdayUp = station.stationTimetable?[safe: StationTimetable.weekdayUp.rawValue]
-            displayTimetableInTableView(stationTimetable: weekdayUp)
+            displayUpTimetable(station: station)
         case .down:
-            let weekdayDown = station.stationTimetable?[safe: StationTimetable.weekdayDown.rawValue]
-            displayTimetableInTableView(stationTimetable: weekdayDown)
+            displayDownTimetable(station: station)
         }
         
     }
@@ -174,7 +187,7 @@ extension TimetableViewController: UITableViewDataSource {
 }
 
 
-// MARK: -
+// MARK: - UITableViewDelegate
 extension TimetableViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
