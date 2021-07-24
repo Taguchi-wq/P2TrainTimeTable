@@ -74,7 +74,7 @@ class SearchResultViewController: UIViewController {
     
     /// TimetableViewControllerに遷移する
     private func transitionToTimetableViewController(indexPath: IndexPath) {
-        let timetableViewController = storyboard?.instantiateViewController(withIdentifier: TimetableViewController.reuseIdentifier) as! TimetableViewController
+        guard let timetableViewController = storyboard?.instantiateViewController(withIdentifier: TimetableViewController.reuseIdentifier) as? TimetableViewController else { return }
         timetableViewController.initialize(station: stations[indexPath.row])
         navigationController?.pushViewController(timetableViewController, animated: true)
     }
