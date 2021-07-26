@@ -3,25 +3,71 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		450A03AE43FFDFF5C659F9D7 /* Pods_P2TrainTimeTable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12612F53D9FC55DF1A5282B3 /* Pods_P2TrainTimeTable.framework */; };
+		7F027A1F26AA9ED00051D6BF /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F027A1E26AA9ED00051D6BF /* Array+Extension.swift */; };
 		7F44BA1326A052D5005CF92B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA1226A052D5005CF92B /* AppDelegate.swift */; };
-		7F44BA1526A052D5005CF92B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA1426A052D5005CF92B /* ViewController.swift */; };
-		7F44BA1826A052D5005CF92B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA1626A052D5005CF92B /* Main.storyboard */; };
 		7F44BA1A26A052D5005CF92B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA1926A052D5005CF92B /* Assets.xcassets */; };
 		7F44BA1D26A052D5005CF92B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA1B26A052D5005CF92B /* LaunchScreen.storyboard */; };
+		7F44BA2526A055B3005CF92B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA2426A055B3005CF92B /* HomeViewController.swift */; };
+		7F44BA2726A055C0005CF92B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA2626A055C0005CF92B /* Home.storyboard */; };
+		7F44BA2C26A061F4005CF92B /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA2B26A061F4005CF92B /* SearchResultViewController.swift */; };
+		7F44BA2E26A06201005CF92B /* SearchResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA2D26A06201005CF92B /* SearchResult.storyboard */; };
+		7F44BA3126A06495005CF92B /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3026A06495005CF92B /* Reusable.swift */; };
+		7F44BA3426A06C74005CF92B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3326A06C74005CF92B /* NetworkManager.swift */; };
+		7F44BA3726A1DE13005CF92B /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3626A1DE13005CF92B /* Station.swift */; };
+		7F44BA3926A2D3E8005CF92B /* TimetableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3826A2D3E8005CF92B /* TimetableViewController.swift */; };
+		7F44BA3B26A2D402005CF92B /* Timetable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA3A26A2D402005CF92B /* Timetable.storyboard */; };
+		7F44BA3D26A2DF41005CF92B /* TimetableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3C26A2DF41005CF92B /* TimetableObject.swift */; };
+		7F44BA3F26A2ECDB005CF92B /* Timetable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA3E26A2ECDB005CF92B /* Timetable.swift */; };
+		7F44BA4126A5BFEA005CF92B /* URL.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F44BA4026A5BFE9005CF92B /* URL.plist */; };
+		7F44BA4326A5C20F005CF92B /* KeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA4226A5C20F005CF92B /* KeyManager.swift */; };
+		7F44BA4826A6ACA3005CF92B /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44BA4726A6ACA3005CF92B /* URL+Extension.swift */; };
+		7FCACA8C26AACA1E00069EE7 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCACA8B26AACA1E00069EE7 /* RealmManager.swift */; };
+		7FCACA9026AACC4F00069EE7 /* FavoriteStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCACA8F26AACC4F00069EE7 /* FavoriteStation.swift */; };
+		7FCACA9326AB10B400069EE7 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCACA9226AB10B400069EE7 /* Image.swift */; };
+		7FCACA9526AB49BE00069EE7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCACA9426AB49BE00069EE7 /* Alert.swift */; };
+		7FCACA9726AC10AD00069EE7 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCACA9626AC10AD00069EE7 /* Date+Extension.swift */; };
+		7FCACA9B26AC124300069EE7 /* TimeZone+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCACA9A26AC124300069EE7 /* TimeZone+Extension.swift */; };
+		7FCACA9D26AC12CA00069EE7 /* Locale+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCACA9C26AC12CA00069EE7 /* Locale+Extension.swift */; };
+		7FCACAA126AC182E00069EE7 /* Weekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCACAA026AC182E00069EE7 /* Weekday.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		06AAE4A588D7FF31AF47DE12 /* Pods-P2TrainTimeTable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-P2TrainTimeTable.debug.xcconfig"; path = "Target Support Files/Pods-P2TrainTimeTable/Pods-P2TrainTimeTable.debug.xcconfig"; sourceTree = "<group>"; };
+		12612F53D9FC55DF1A5282B3 /* Pods_P2TrainTimeTable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_P2TrainTimeTable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76ED776284B996BEEC841D0C /* Pods-P2TrainTimeTable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-P2TrainTimeTable.release.xcconfig"; path = "Target Support Files/Pods-P2TrainTimeTable/Pods-P2TrainTimeTable.release.xcconfig"; sourceTree = "<group>"; };
+		7F027A1E26AA9ED00051D6BF /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		7F44BA0F26A052D5005CF92B /* P2TrainTimeTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2TrainTimeTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F44BA1226A052D5005CF92B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7F44BA1426A052D5005CF92B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7F44BA1726A052D5005CF92B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F44BA1926A052D5005CF92B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F44BA1C26A052D5005CF92B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F44BA1E26A052D5005CF92B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F44BA2426A055B3005CF92B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7F44BA2626A055C0005CF92B /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		7F44BA2B26A061F4005CF92B /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		7F44BA2D26A06201005CF92B /* SearchResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchResult.storyboard; sourceTree = "<group>"; };
+		7F44BA3026A06495005CF92B /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		7F44BA3326A06C74005CF92B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7F44BA3626A1DE13005CF92B /* Station.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		7F44BA3826A2D3E8005CF92B /* TimetableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableViewController.swift; sourceTree = "<group>"; };
+		7F44BA3A26A2D402005CF92B /* Timetable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timetable.storyboard; sourceTree = "<group>"; };
+		7F44BA3C26A2DF41005CF92B /* TimetableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimetableObject.swift; sourceTree = "<group>"; };
+		7F44BA3E26A2ECDB005CF92B /* Timetable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timetable.swift; sourceTree = "<group>"; };
+		7F44BA4026A5BFE9005CF92B /* URL.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = URL.plist; sourceTree = "<group>"; };
+		7F44BA4226A5C20F005CF92B /* KeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyManager.swift; sourceTree = "<group>"; };
+		7F44BA4726A6ACA3005CF92B /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		7FCACA8B26AACA1E00069EE7 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		7FCACA8F26AACC4F00069EE7 /* FavoriteStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteStation.swift; sourceTree = "<group>"; };
+		7FCACA9226AB10B400069EE7 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		7FCACA9426AB49BE00069EE7 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		7FCACA9626AC10AD00069EE7 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		7FCACA9A26AC124300069EE7 /* TimeZone+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+Extension.swift"; sourceTree = "<group>"; };
+		7FCACA9C26AC12CA00069EE7 /* Locale+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Extension.swift"; sourceTree = "<group>"; };
+		7FCACAA026AC182E00069EE7 /* Weekday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekday.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +75,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				450A03AE43FFDFF5C659F9D7 /* Pods_P2TrainTimeTable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E161B0F2409AC3B4A90D473 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				06AAE4A588D7FF31AF47DE12 /* Pods-P2TrainTimeTable.debug.xcconfig */,
+				76ED776284B996BEEC841D0C /* Pods-P2TrainTimeTable.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		620FCB50FF6D586F3D610DDA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12612F53D9FC55DF1A5282B3 /* Pods_P2TrainTimeTable.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7F44BA0626A052D4005CF92B = {
 			isa = PBXGroup;
 			children = (
 				7F44BA1126A052D5005CF92B /* P2TrainTimeTable */,
 				7F44BA1026A052D5005CF92B /* Products */,
+				3E161B0F2409AC3B4A90D473 /* Pods */,
+				620FCB50FF6D586F3D610DDA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +120,107 @@
 		7F44BA1126A052D5005CF92B /* P2TrainTimeTable */ = {
 			isa = PBXGroup;
 			children = (
-				7F44BA1226A052D5005CF92B /* AppDelegate.swift */,
-				7F44BA1426A052D5005CF92B /* ViewController.swift */,
-				7F44BA1626A052D5005CF92B /* Main.storyboard */,
+				7F44BA2A26A05684005CF92B /* Application */,
+				7FCACA9126AB108800069EE7 /* Utility */,
+				7F44BA3526A1DD60005CF92B /* Model */,
+				7F44BA2926A0566B005CF92B /* View */,
+				7F44BA2826A05653005CF92B /* Controller */,
+				7F44BA4426A6AC67005CF92B /* Extension */,
+				7F44BA2F26A0643A005CF92B /* Protocol */,
 				7F44BA1926A052D5005CF92B /* Assets.xcassets */,
-				7F44BA1B26A052D5005CF92B /* LaunchScreen.storyboard */,
 				7F44BA1E26A052D5005CF92B /* Info.plist */,
+				7F44BA4026A5BFE9005CF92B /* URL.plist */,
 			);
 			path = P2TrainTimeTable;
+			sourceTree = "<group>";
+		};
+		7F44BA2826A05653005CF92B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7F44BA2426A055B3005CF92B /* HomeViewController.swift */,
+				7F44BA2B26A061F4005CF92B /* SearchResultViewController.swift */,
+				7F44BA3826A2D3E8005CF92B /* TimetableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7F44BA2926A0566B005CF92B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F44BA1B26A052D5005CF92B /* LaunchScreen.storyboard */,
+				7F44BA2626A055C0005CF92B /* Home.storyboard */,
+				7F44BA2D26A06201005CF92B /* SearchResult.storyboard */,
+				7F44BA3A26A2D402005CF92B /* Timetable.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7F44BA2A26A05684005CF92B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				7F44BA1226A052D5005CF92B /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		7F44BA2F26A0643A005CF92B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				7F44BA3026A06495005CF92B /* Reusable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		7F44BA3226A06BFC005CF92B /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7F44BA3326A06C74005CF92B /* NetworkManager.swift */,
+				7F44BA4226A5C20F005CF92B /* KeyManager.swift */,
+				7FCACA8B26AACA1E00069EE7 /* RealmManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		7F44BA3526A1DD60005CF92B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F44BA3226A06BFC005CF92B /* Manager */,
+				7FCACA8A26AAC9F700069EE7 /* Entity */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7F44BA4426A6AC67005CF92B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7F44BA4726A6ACA3005CF92B /* URL+Extension.swift */,
+				7F027A1E26AA9ED00051D6BF /* Array+Extension.swift */,
+				7FCACA9626AC10AD00069EE7 /* Date+Extension.swift */,
+				7FCACA9A26AC124300069EE7 /* TimeZone+Extension.swift */,
+				7FCACA9C26AC12CA00069EE7 /* Locale+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		7FCACA8A26AAC9F700069EE7 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				7F44BA3626A1DE13005CF92B /* Station.swift */,
+				7F44BA3E26A2ECDB005CF92B /* Timetable.swift */,
+				7F44BA3C26A2DF41005CF92B /* TimetableObject.swift */,
+				7FCACA8F26AACC4F00069EE7 /* FavoriteStation.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		7FCACA9126AB108800069EE7 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				7FCACA9226AB10B400069EE7 /* Image.swift */,
+				7FCACAA026AC182E00069EE7 /* Weekday.swift */,
+				7FCACA9426AB49BE00069EE7 /* Alert.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +230,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F44BA2126A052D5005CF92B /* Build configuration list for PBXNativeTarget "P2TrainTimeTable" */;
 			buildPhases = (
+				97785DE2D3B4736DBC12FB32 /* [CP] Check Pods Manifest.lock */,
 				7F44BA0B26A052D5005CF92B /* Sources */,
 				7F44BA0C26A052D5005CF92B /* Frameworks */,
 				7F44BA0D26A052D5005CF92B /* Resources */,
+				67443EBE43D6C89D41DB1A16 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,35 +283,90 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F44BA2726A055C0005CF92B /* Home.storyboard in Resources */,
 				7F44BA1D26A052D5005CF92B /* LaunchScreen.storyboard in Resources */,
+				7F44BA4126A5BFEA005CF92B /* URL.plist in Resources */,
 				7F44BA1A26A052D5005CF92B /* Assets.xcassets in Resources */,
-				7F44BA1826A052D5005CF92B /* Main.storyboard in Resources */,
+				7F44BA3B26A2D402005CF92B /* Timetable.storyboard in Resources */,
+				7F44BA2E26A06201005CF92B /* SearchResult.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		67443EBE43D6C89D41DB1A16 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-P2TrainTimeTable/Pods-P2TrainTimeTable-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-P2TrainTimeTable/Pods-P2TrainTimeTable-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-P2TrainTimeTable/Pods-P2TrainTimeTable-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97785DE2D3B4736DBC12FB32 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-P2TrainTimeTable-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7F44BA0B26A052D5005CF92B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F44BA1526A052D5005CF92B /* ViewController.swift in Sources */,
+				7FCACA8C26AACA1E00069EE7 /* RealmManager.swift in Sources */,
+				7F44BA3926A2D3E8005CF92B /* TimetableViewController.swift in Sources */,
+				7F44BA4326A5C20F005CF92B /* KeyManager.swift in Sources */,
+				7F44BA3126A06495005CF92B /* Reusable.swift in Sources */,
+				7FCACA9326AB10B400069EE7 /* Image.swift in Sources */,
+				7F027A1F26AA9ED00051D6BF /* Array+Extension.swift in Sources */,
+				7FCACA9D26AC12CA00069EE7 /* Locale+Extension.swift in Sources */,
+				7F44BA4826A6ACA3005CF92B /* URL+Extension.swift in Sources */,
+				7FCACAA126AC182E00069EE7 /* Weekday.swift in Sources */,
+				7FCACA9026AACC4F00069EE7 /* FavoriteStation.swift in Sources */,
+				7FCACA9B26AC124300069EE7 /* TimeZone+Extension.swift in Sources */,
+				7F44BA3F26A2ECDB005CF92B /* Timetable.swift in Sources */,
+				7FCACA9726AC10AD00069EE7 /* Date+Extension.swift in Sources */,
 				7F44BA1326A052D5005CF92B /* AppDelegate.swift in Sources */,
+				7F44BA3426A06C74005CF92B /* NetworkManager.swift in Sources */,
+				7F44BA2C26A061F4005CF92B /* SearchResultViewController.swift in Sources */,
+				7F44BA3726A1DE13005CF92B /* Station.swift in Sources */,
+				7F44BA3D26A2DF41005CF92B /* TimetableObject.swift in Sources */,
+				7FCACA9526AB49BE00069EE7 /* Alert.swift in Sources */,
+				7F44BA2526A055B3005CF92B /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7F44BA1626A052D5005CF92B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7F44BA1726A052D5005CF92B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		7F44BA1B26A052D5005CF92B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -280,11 +496,13 @@
 		};
 		7F44BA2226A052D5005CF92B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06AAE4A588D7FF31AF47DE12 /* Pods-P2TrainTimeTable.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZV473SPTS;
 				INFOPLIST_FILE = P2TrainTimeTable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,17 +510,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.cm0123.P2TrainTimeTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		7F44BA2326A052D5005CF92B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76ED776284B996BEEC841D0C /* Pods-P2TrainTimeTable.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MZV473SPTS;
 				INFOPLIST_FILE = P2TrainTimeTable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +530,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.ac.jec.cm0123.P2TrainTimeTable;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
